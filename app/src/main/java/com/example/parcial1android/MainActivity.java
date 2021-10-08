@@ -3,6 +3,7 @@ package com.example.parcial1android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,9 +11,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button verdeBtn;
-    private Button amarilloBtn;
-    private Button rojoBtn;
+    private View verdeBtn;
+    private View amarilloBtn;
+    private View rojoBtn;
     private EditText posXt;
     private EditText posYt;
     private EditText recordatorio;
@@ -62,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
                 (v)-> {
                     importanciaText = "2";
                 }
+
         );
+
+        setColor();
 
 
         confirmarBtn.setOnClickListener(
@@ -107,17 +111,17 @@ public class MainActivity extends AppCompatActivity {
                             if (importanciaText == "1") {
                                 verdeBtn.setBackgroundResource(R.drawable.seleccion1);
                             } else if (importanciaText != "1") {
-                                verdeBtn.setBackgroundResource(R.drawable.seleccion1);
+                                verdeBtn.setBackgroundResource(R.drawable.verde_btn);
                             }
                             if (importanciaText == "2") {
                                 amarilloBtn.setBackgroundResource(R.drawable.seleccion2);
                             } else if (importanciaText != "2") {
-                                amarilloBtn.setBackgroundResource(R.drawable.seleccion2);
+                                amarilloBtn.setBackgroundResource(R.drawable.amarillo_btn);
                             }
                             if (importanciaText == "3") {
                                 rojoBtn.setBackgroundResource(R.drawable.seleccion3);
                             } else if (importanciaText != "3") {
-                                rojoBtn.setBackgroundResource(R.drawable.seleccion3);
+                                rojoBtn.setBackgroundResource(R.drawable.rojo_btn);
                             }
                         });
             }
